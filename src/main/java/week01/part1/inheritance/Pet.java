@@ -1,6 +1,6 @@
-package week01.inheritance;
+package week01.part1.inheritance;
 
-import week01.Animal;
+import week01.part1.Animal;
 
 public class Pet implements Animal
 {

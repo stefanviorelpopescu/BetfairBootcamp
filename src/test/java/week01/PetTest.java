@@ -1,7 +1,7 @@
 package week01;
 
 import org.junit.jupiter.api.Test;
-import week01.inheritance.Pet;
+import week01.part1.inheritance.Pet;
 
 class PetTest
 {

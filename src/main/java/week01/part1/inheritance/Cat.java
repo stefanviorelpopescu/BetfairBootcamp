@@ -1,4 +1,4 @@
-package week01.inheritance;
+package week01.part1.inheritance;
 
 public class Cat extends Pet
 {

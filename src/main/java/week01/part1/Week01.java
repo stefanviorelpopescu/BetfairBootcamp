@@ -1,7 +1,7 @@
-package week01;
+package week01.part1;
 
-import week01.inheritance.Cat;
-import week01.inheritance.Pet;
+import week01.part1.inheritance.Cat;
+import week01.part1.inheritance.Pet;
 
 public class Week01
 {

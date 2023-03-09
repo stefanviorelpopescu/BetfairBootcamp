@@ -1,4 +1,4 @@
-package week01.composition;
+package week01.part1.composition;
 
 public class PetBasics
 {

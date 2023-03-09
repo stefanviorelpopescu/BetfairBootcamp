@@ -1,4 +1,4 @@
-package week01;
+package week01.part1;
 
 public interface Animal
 {

@@ -1,6 +1,6 @@
-package week01.composition;
+package week01.part1.composition;
 
-import week01.Animal;
+import week01.part1.Animal;
 
 public class DgoComposition implements Animal
 {
