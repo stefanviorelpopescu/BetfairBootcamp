@@ -87,7 +87,7 @@ public class Main
             System.out.println("The number is invalid !!!");
         }
 
-        numberProcessor.readFromFile("names.txt");
+        numberProcessor.readFromFile("src/main/resources/names2.txt");
 
         System.out.println("END");
     }
