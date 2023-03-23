@@ -1,15 +1,11 @@
 package week02;
 
-import sun.security.util.ArrayUtil;
 import week02.student.StudentModel;
 import week02.student.StudentModelComparatorByAge;
-import week02.student.StudentState;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingInt;
