@@ -36,6 +36,7 @@ public class Week04
         System.out.println("AFTER: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
         Counter counter = new Counter();
+        Integer count = 0;
 
         CounterThread c1 = new CounterThread(counter);
         CounterThread c2 = new CounterThread(counter);
@@ -66,6 +67,16 @@ public class Week04
         System.out.println("Time " + (end - start));
 
         List<Integer> numbers = Collections.synchronizedList(new ArrayList<>());
+
+        long startString = System.currentTimeMillis();
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i <1000_000; i++)
+        {
+            s.append("a");
+        }
+        long endString = System.currentTimeMillis();
+        System.out.println("Time String: " + (endString-startString));
+
     }
 
 }
