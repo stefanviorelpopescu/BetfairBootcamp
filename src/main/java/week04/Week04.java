@@ -1,19 +1,23 @@
 package week04;
 
+import week02.student.StudentModel;
 import week04.counter.Counter;
 import week04.counter.CounterThread;
 import week04.counter.SumThread;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Week04
 {
 
     public static void main(String[] args) throws InterruptedException
     {
-        System.out.println("BEFORE: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        Logger logger = Logger.getLogger(Week04.class.getName());
+
+//        System.out.println("BEFORE: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        logger.log(Level.INFO, "BEFORE: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
         MyRunnable myRunnable = new MyRunnable();
         Thread t1 = new Thread(myRunnable);
@@ -77,6 +81,15 @@ public class Week04
         long endString = System.currentTimeMillis();
         System.out.println("Time String: " + (endString-startString));
 
+        List<StudentModel> allStudents = new ArrayList<>();
+
+        Map<String, List<StudentModel>> map = new HashMap<>();
+        for (StudentModel student : allStudents)
+        {
+            String firstName = student.getFirstName();
+            map.putIfAbsent(firstName, new ArrayList<>());
+            map.get(firstName).add(student);
+        }
     }
 
 }
