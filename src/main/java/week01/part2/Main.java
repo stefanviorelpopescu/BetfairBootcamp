@@ -10,6 +10,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
+import static java.util.Comparator.comparingInt;
+
 public class Main
 {
     public static void main(String[] args)
@@ -74,7 +76,7 @@ public class Main
 
         shapes.sort((o1, o2) -> o1.getSurface() - o2.getSurface());
 
-        shapes.sort(Comparator.comparingInt(Figure::getSurface));
+        shapes.sort(comparingInt(Figure::getSurface));
 
         Scanner scanner = new Scanner(System.in);
 

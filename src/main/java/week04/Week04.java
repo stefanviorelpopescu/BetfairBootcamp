@@ -31,8 +31,9 @@ public class Week04
 //        myThread.join();
 
         Thread myThread2 = new Thread(() -> {
-            for (int i=0; i<1_000; i++) {
-                System.out.println(Thread.currentThread().getName() + " - "  + i);
+            for (int i = 0; i < 1_000; i++)
+            {
+                System.out.println(Thread.currentThread().getName() + " - " + i);
             }
         });
 
@@ -90,6 +91,8 @@ public class Week04
             map.putIfAbsent(firstName, new ArrayList<>());
             map.get(firstName).add(student);
         }
+
+
     }
 
 }

@@ -1,5 +1,7 @@
 package week02.student;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class StudentModel implements Comparable<StudentModel>
@@ -8,6 +10,7 @@ public class StudentModel implements Comparable<StudentModel>
     String firstName;
     String lastName;
     int age;
+    List<String> failedClasses = new ArrayList<>();
 
 
     public StudentModel(long id, String firstName, String lastName, int age)
@@ -58,6 +61,11 @@ public class StudentModel implements Comparable<StudentModel>
         this.age = age;
     }
 
+    public List<String> getFailedClasses()
+    {
+        return failedClasses;
+    }
+
     public StudentDto convertToDto() {
         StudentDto studentDto = new StudentDto();
         studentDto.setFirstName(this.getFirstName());
@@ -65,6 +73,11 @@ public class StudentModel implements Comparable<StudentModel>
         studentDto.setFullName(this.getFirstName() + " " + this.getLastName());
         studentDto.setAge(this.getAge());
         return studentDto;
+    }
+
+    public boolean isStudentInTerminalYear()
+    {
+        return this.getAge() < 30 || this.getLastName().startsWith("X");
     }
 
     @Override
