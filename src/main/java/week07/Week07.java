@@ -18,15 +18,16 @@ public class Week07
         try(Connection connection = getConnection())
         {
             Objects.requireNonNull(connection);
-
+            connection.setAutoCommit(false);
             try (PreparedStatement ps = connection.prepareStatement("insert into public.authors (name, phone_no, city) values (?, ?, ?)"))
             {
-                ps.setString(1, "Andrei");
-                ps.setString(2, "0756342552");
-                ps.setInt(3, 3);
-                ps.executeUpdate();
+                insertAuthor(ps, "Andrei", "344", 2);
+                insertAuthor(ps, "Viorel", "4567", 3);
+                insertAuthor(ps, "Marcel", "2138", 1);
+                connection.commit();
             } catch (SQLException e)
             {
+                connection.rollback();
                 System.err.println("Cannot insert author: " + e.getMessage());
             }
         } catch (SQLException e)
@@ -34,6 +35,14 @@ public class Week07
             System.err.println("Cannot insert author: " + e.getMessage());
         }
 
+    }
+
+    private static void insertAuthor(PreparedStatement ps, String name, String phoneNo, int cityId) throws SQLException
+    {
+        ps.setString(1, name);
+        ps.setString(2, phoneNo);
+        ps.setInt(3, cityId);
+        ps.executeUpdate();
     }
 
     private static void runNormalStatement()
